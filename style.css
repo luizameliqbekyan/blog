@@ -91,7 +91,8 @@ header a {
 footer {
   margin-top: 20%;
   width: 100%;
-  background-color: black;
+  /* background-color: black; */
+  background-image: radial-gradient(red,blue);
   color: #f7f3ee;
   text-align: center;
   padding: 2rem 1rem;
@@ -130,8 +131,13 @@ footer .data {
     margin: 30px;
     width: 700px;
     padding-top: 100px;
+    transition: 0.5s ease;
 }
 
+.about img:hover {
+  transform: rotate(45deg);
+  
+}
 
 form {
   max-width: 400px;
@@ -189,6 +195,19 @@ button[type="submit"] {
 
 button[type="submit"]:hover {
   background: #45a049;
+}
+
+@keyframes myAnimation {
+  from {background-color: rgb(17, 178, 71);}
+  to {background-color: yellow;}
+}
+
+#animate  {
+  width: 200px;
+  height: 200px;
+  background-color: green;
+  animation-name: myAnimation;
+  animation-duration: 3s;
 }
 
 @media screen and (max-width: 921px) and (min-width: 768px) {
