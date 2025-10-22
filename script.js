@@ -176,3 +176,23 @@ function keyValue(ob) {
     return text;
 }
 console.log(keyValue({name: "Anna", age: 25}));
+
+let l=document.getElementById("list")
+let input=document.getElementById("input1")
+let button=document.getElementById("button1")
+button.onclick= function(){
+    newLi = document.createElement("li")
+    l.appendChild(newLi);
+    newLi.innerHTML=input.value;
+    input.value=""
+};
+
+
+
+function addfont(element) {
+    element.style.color = "green";
+}
+
+function removeP(element) {
+    element.remove()
+}
