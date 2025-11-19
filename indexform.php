@@ -11,35 +11,38 @@
 </head>
 <body >
    
-    <form action=""> 
+    <form action="form-submit.php" method="post"> 
     <h2 style="align-self: center;">Personal information</h2>
         <div>
         <label for="name">Name</label>
-        <input type="text" id="name" >
+        <input type="text" id="name" name="name">
         </div>
         <div>
         <label for="surname">Surname</label>
-        <input type="text" id="surname" >
+        <input type="text" id="surname" name="surname">
         </div>
           <div>
         <label for="email">Email</label>
-        <input type="email" id="email" >
+        <input type="email" id="email" name="email">
         </div>
         <div>
         <label for="password">Password</label>
-        <input type="text" id="password">
+        <input type="text" id="password" name="password">
         </div>
          <div>
         <label for="password2">Repeat password</label>
-        <input type="text" id="password2">
+        <input type="text" id="password2" name="password2">
+        </div>
+         <label for="username">Username</label>
+        <input type="text" id="username" name="username">
         </div>
         <div>
         <label for="date">Birth Date</label>
-        <input type="date" id="date" >
+        <input type="date" id="date" name="date">
         </div>
         <div>
         <label for="gender">Gender</label>
-         <select name="Gender" id="gender">
+         <select name="gender" id="gender">
             <option value="">Female</option>
             <option value="">Male</option>
             <option value="">Other</option>
@@ -47,15 +50,15 @@
         </div>
         <div>
         <label for="age">Age</label>
-        <input type="number" id="age" required>
+        <input type="number" id="age" name="age">
         </div>
         <div>
         <label for="adress">Adress</label>
-        <input type="textarea" id="adress" >
+        <input type="textarea" id="adress" name="address">
         </div>
         <div>
         <label for="phone">Phone</label>
-        <input type="text" id="phone" >
+        <input type="text" id="phone" name="phone">
         </div>
         <input type="submit">
         <input type="reset">
