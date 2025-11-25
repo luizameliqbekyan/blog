@@ -49,10 +49,6 @@
          </select>
         </div>
         <div>
-        <label for="age">Age</label>
-        <input type="number" id="age" name="age">
-        </div>
-        <div>
         <label for="adress">Adress</label>
         <input type="textarea" id="adress" name="address">
         </div>
