@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HOME</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+  <link href="https://fonts.googleapis.com/css2?family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+  <header> 
+    <a class="headera" href="about.html">ABOUT</a>
+    <a href="index.html"><img src="img/next.png" alt="logo"></a>
+    <a class="headera" href="contact.html">CONTACT US</a>
+  </header>
+
+  <main>
+    <div id="text">MOST RECENT NEWS</div>
+
+    <div class="news">
+      <div class="section">
+        <img src="./img/science.jpg" alt="news1">
+        <div class="title">Breakthrough in Medical Research</div>
+        <div class="description">Scientists announce major advancement in laboratory testing methods, promising faster and more accurate diagnostic results for patients worldwide.</div>
+      </div> 
+
+      <div class="section1">
+        <img src="./img/programming.jpg" alt="news2">
+        <div class="title">New Programming Language</div>
+        <div class="description">Developers embrace innovative coding framework that streamlines software development, reducing project timelines by up to 40% across major tech companies.</div>
+      </div>
+
+      <div class="section">
+        <img src="./img/movie.jpg" alt="news3">
+        <div class="title">Hollywood Production News</div>
+        <div class="description">Major film studio completes record-breaking shoot in desert location, with director Jakob & Ryan setting new standards for independent cinema production.</div>
+      </div>
+
+      <div class="section1">
+        <img src="./img/volcano.jpg" alt="news4">
+        <div class="title">Volcanic Activity Intensifies</div>
+        <div class="description">Authorities issue warnings as active volcano shows increased eruption activity, with emergency response teams monitoring the situation closely for nearby communities.</div>
+      </div>
+    </div>
+  </main>
+
+  <ul id="list">
+   
+  </ul>
+  <button id="button1" style="width: 50px;">add</button>
+  <input id="input1" type="text" style="width: 200px; height: 30px;">
+  <div id="animate"></div>
+
+  <p onclick="addfont(this)" ondblclick="removeP(this)" >text 1</p>
+  <p onclick="addfont(this)" ondblclick="removeP(this)" >text 2</p>
+  <p onclick="addfont(this)" ondblclick="removeP(this)" >text 3</p>
+
+  <footer>
+    <div class="footer1">
+      <div id="info">CONTACT INFORMATION</div>
+      <div>Phone</div>
+      <div class="data">01111111</div>
+      <div>Gmail</div>
+      <div class="data">next@gmail.com</div>
+    </div>
+  </footer>
+   <script src="script.js"></script>
+
+
+   <?php 
+   $myfile = fopen("newfile.txt","a") or die("unable to open file");
+   $txt="Mickey Mouse \n";
+   fwrite($myfile ,$txt);
+   fclose($myfile);
+   ?>
+</body>
+</html>

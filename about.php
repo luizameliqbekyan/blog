@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ABOUT</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto">
+    <link href="https://fonts.googleapis.com/css2?family=PT+Sans:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header> 
+         <a class="headera" href="about.html">ABOUT</a>
+        <a href="index.html"><img src="img/next.png" alt="logo"></a>
+        <a class="headera" href="contact.html">CONTACT US</a>
+
+    </header>
+        <div class="about">
+            <img src="./img/news.jpg" alt="img">
+            <div>Next is a forward-thinking digital news platform dedicated to delivering breaking news and stories that matter. With a focus on accuracy, speed, and integrity, we bring you comprehensive coverage across global events, technology, science, entertainment, and more. Our team of experienced journalists works around the clock to keep you informed and connected to the world. At Next, we don't just report the news—we help you understand what's coming next.</div>
+        </div>
+    <footer style="margin-top: 10%;">
+        <div class="footer1">
+        <div id="info">CONTACT INFORMATION</div>
+        <div>Phone</div>
+        <div class="data">01111111</div>
+        <div>Gmail</div>
+        <div class="data">next@gmail.com</div>
+        </div>
+    </footer>
+</body>
+</html>

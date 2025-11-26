@@ -11,7 +11,8 @@
 </head>
 <body >
    
-    <form action="form-submit.php" method="post"> 
+    <form action="form-submit.php" method="post" enctype="multipart/form-data"> 
+
     <h2 style="align-self: center;">Personal information</h2>
         <div>
         <label for="name">Name</label>
@@ -27,11 +28,11 @@
         </div>
         <div>
         <label for="password">Password</label>
-        <input type="text" id="password" name="password">
+        <input type="password" id="password" name="password">
         </div>
          <div>
         <label for="password2">Repeat password</label>
-        <input type="text" id="password2" name="password2">
+        <input type="password" id="password2" name="password2">
         </div>
          <label for="username">Username</label>
         <input type="text" id="username" name="username">
@@ -58,8 +59,25 @@
         </div>
         <input type="submit">
         <input type="reset">
+        <label for="photo"></label><br>
+    <input id="photo" type="file" name="photo">
     </form>
+    
+<?php
 
+session_start();
+
+if (isset($_SESSION['error']) && !empty($_SESSION['error'])) {
+    foreach ($_SESSION['error'] as $error) {
+        echo "<div class='error'>{$error}</div><br>";
+    }
+} elseif (isset($_SESSION['success']) && !empty($_SESSION['success'])) {
+    echo "<div class='success'>{$_SESSION['success']}</div>";
+} else {
+    echo "<div>No messages to display.</div>";
+}
+
+?>
 
 </body>
 </html>
