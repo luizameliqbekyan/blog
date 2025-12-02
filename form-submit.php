@@ -95,5 +95,38 @@
 //     return $data;
 // }
 var_dump($_POST);
+echo "<br>";
 var_dump($_FILES);
+echo "<br>";
+
+
+
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $targetDir = __DIR__ . "/img/";
+    $fileName = basename($_FILES["photo"]["name"]);
+    $targetFile = $targetDir . $fileName;
+
+    $allowedTypes = ['image/jpeg', 'image/png', 'image/gif'];
+    $maxSize = 5 * 1024 * 1024 * 1024;
+
+    if (!isset($_FILES["photo"]) || $_FILES["photo"]["error"] !== 0) {
+        echo "No file selected or there was an upload error.";
+        exit;
+    }
+    if (!in_array($_FILES["photo"]["type"], $allowedTypes)) {
+        echo "Only JPG, PNG, or GIF files are allowed.";
+        exit;
+    }
+      if ($_FILES["photo"]["size"] > $maxSize) {
+        echo "File is too large. Maximum size is 5GB.";
+        exit;
+    }
+    if (move_uploaded_file($_FILES["photo"]["tmp_name"], $targetFile)) {
+        echo "Image uploaded successfully!";
+        echo "<br>Saved in: blog/img/" . $fileName;
+    } else {
+        echo "Error uploading image.";
+    }
+}
+
 ?>
