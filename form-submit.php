@@ -34,6 +34,7 @@ $sqlUser = "CREATE TABLE IF NOT EXISTS user(
      email VARCHAR(100) NOT NULL,
      datee DATE ,
      passwordd VARCHAR(70),
+     username VARCHAR(50) NOT NULL,
      phone VARCHAR(50),
      gender VARCHAR(10),
      addres VARCHAR(50)
@@ -53,13 +54,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $date = test_input($_POST["date"] ?? "");
     $password = $_POST["password"] ?? "";
     $password2 = $_POST["password2"] ?? "";
+    $username = test_input($_POST["username"] ?? "");
     $phone = test_input($_POST["phone"] ?? "");
     $gender = test_input($_POST["gender"] ?? "");
     $address = test_input($_POST["address"] ?? "");
 
 
-    $hashedPassword = password_hash($password, PASSWORD_DEFAULT);
-    $hashedPassword2 = password_hash($password2, PASSWORD_DEFAULT);
+    $hashedPassword = hash('sha256', $password);
+    $hashedPassword = hash('sha256', $password);
     if (empty($name)) {
         $_SESSION['error']['name'] = "Please enter name <br>";
     } elseif (!preg_match("/^[a-zA-Z'-]+$/", $name)) {
@@ -124,9 +126,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 
     if (empty($_SESSION['error'])) {
-        $sqlInsert = "INSERT INTO user (namee,surname,email,datee,passwordd,phone,gender,addres)
+        $sqlInsert = "INSERT INTO user (namee,surname,email,datee,passwordd,username,phone,gender,addres)
                      VALUES ('".$_POST['name']."', '".$_POST['surname']."', '".$_POST['email']."',
-                     '".$_POST['date']."','".$_POST['password']."','$hashedPassword','".$_POST['gender']."',
+                     '".$_POST['date']."','$hashedPassword','".$_POST['username']."','".$_POST['phone']."','".$_POST['gender']."',
                      '".$_POST['address']."')";
 
         if($conn->query($sqlInsert) === TRUE) {

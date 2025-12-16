@@ -7,25 +7,40 @@
     <title>Document</title>
 </head>
 <body>
-    <form action="">
+    <form action="login-submit.php"  method="post" enctype="multipart/form-data">
         <h1>LOGIN</h1>
         <div>
-        <label for="name">Name</label>
-        <input type="text" id="name" name="name">
-        </div>
-        <div>
-        <label for="email">Email</label>
-        <input type="email" id="email" name="email">
+        <label for="username">Name</label>
+        <input type="text" id="username" name="username">
         </div>
         <div>
         <label for="password">Password</label>
         <input type="password" id="password" name="password">
         </div>
-        <input type="submit">
+        <button type="submit">Log In</button>
         </form>
+
+        <style>
+            button {
+            width: 100%;
+            padding: 12px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: transform 0.2s;
+}
+        </style>
 <?php
 
-
+session_start();
+if(isset($_SESSION['error'])){
+    echo "<p style='color:red'>".$_SESSION['error']."</p>";
+    unset($_SESSION['error']);
+}
 
 
 ?>
